@@ -32,7 +32,7 @@ async def index():
         let isPaused = false;
 
         // افتح اتصال ويب سوكت مع السيرفر
-        const ws = new WebSocket("ws://localhost:8000/ws/stream");
+        const ws = new WebSocket("ws://lve75816.onrender.com/ws/stream");
 
         navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(stream => {
           video.srcObject = stream;
@@ -113,7 +113,8 @@ async def viewer():
         let isMuted = false;
         let isPausedLive = false;
 
-        const ws = new WebSocket("ws://localhost:8000/ws/viewer");
+        const ws = new WebSocket("ws://lve75816.onrender.com/ws/viewer");
+
 
         ws.onmessage = event => {
           if (isPausedLive) return;  // لا تُحدث شيء إذا البث متوقف مؤقتًا
